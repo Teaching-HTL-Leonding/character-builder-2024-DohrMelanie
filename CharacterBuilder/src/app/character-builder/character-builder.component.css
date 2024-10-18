@@ -9,9 +9,16 @@
   gap: 1rem;
   padding-left: 1rem;
 }
+img {
+  margin-top: 1rem;
+}
+.builder {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
 
 form {
-  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -27,4 +34,15 @@ form input {
 
 form select {
   padding: 0.5rem;
+}
+
+button {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 0.5rem;
+  border-color:darkcyan;
+  border-style: solid;
 }
