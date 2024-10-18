@@ -1,0 +1,45 @@
+<div class="header">
+  <h3>Character Builder</h3>
+  <h4>Builder</h4>
+  <h4>Randomizer</h4>
+</div>
+
+<form (submit)="buildImage()">
+  <label for="eye">Eye:</label>
+  <select id="eye">
+    <option>No Eye</option>
+    <option>Half Open</option>
+    <option>Closed</option>
+    <option>Open</option>
+  </select>
+
+  <div>
+    <label for="hasHammer">Has Hammer</label>
+    <input type="checkbox" id="hasHammer"/>
+  </div>
+
+  <label for="mouth">Mouth:</label>
+  <select id="mouth">
+    <option>No Mouth</option>
+    <option>Happy</option>
+    <option>Normal</option>
+    <option>Unhappy</option>
+  </select>
+
+  <label for="hand">Right Hand:</label>
+  <select id="hand">
+    <option>No Hand</option>
+    <option>Normal</option>
+    <option>Victory</option>
+  </select>
+
+  <div>
+    <label for="hasTail">Has Tail</label>
+    <input type="checkbox" id="hasTail"/>
+  </div>
+
+  <div>
+    <button type="submit">Build image</button>
+    <button>Feeling lucky...</button>
+  </div>
+</form>
