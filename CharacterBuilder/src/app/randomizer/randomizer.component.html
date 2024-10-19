@@ -1,1 +1,15 @@
-<p>randomizer works!</p>
+<div class="header">
+  <h3>Character Builder</h3>
+  <h4>Builder</h4>
+  <h4>Randomizer</h4>
+</div>
+
+<div class="buttons">
+  <button (click)="zoomIn()">+</button>
+  <button (click)="zoomOut()">-</button>
+  <button (click)="nextCharacter()">Next</button>
+</div>
+
+<div>
+  <img [src]="imageUrl" width="200" [style.transform]="'scale(' + zoomLevel + ')'">
+</div>

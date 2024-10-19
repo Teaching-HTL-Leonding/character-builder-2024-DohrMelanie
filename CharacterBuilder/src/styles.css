@@ -11,3 +11,35 @@ body {
 app-root {
   width: 100%;
 }
+
+
+button {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 0.5rem;
+  border-color:darkcyan;
+  border-style: solid;
+}
+
+button:hover {
+  background-color: darkcyan;
+}
+
+.header {
+  margin-top: 0.5rem;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 1rem;
+  border-style:solid;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+img {
+  margin-top: 1rem;
+}

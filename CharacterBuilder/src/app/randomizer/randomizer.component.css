@@ -1,0 +1,7 @@
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-left: 1rem;
+}

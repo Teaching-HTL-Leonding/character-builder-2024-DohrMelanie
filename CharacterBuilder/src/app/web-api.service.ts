@@ -20,14 +20,7 @@ export class WebApiService {
   readonly apiUrl: string = 'http://localhost:5110/';
   private httpClient = inject(HttpClient);
 
-  async buildImage(eye: string, mouth: string, hand: string, hasHammer: boolean, hasTail: boolean): Promise<string> {
-    const imageOptions: imageOptions = {
-      eye: eye,
-      hasHammer: hasHammer,
-      mouth: mouth,
-      rightHand: hand,
-      hasTail: hasTail
-    };
+  async buildImage(imageOptions: imageOptions): Promise<string> {
     const response = await lastValueFrom(this.httpClient.post<imageResponse>(this.apiUrl + "build-image-url", imageOptions));
     return response.url;
   }

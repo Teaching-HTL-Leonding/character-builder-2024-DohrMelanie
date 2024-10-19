@@ -20,14 +20,19 @@ export class CharacterBuilderComponent {
   private webApiService: WebApiService = inject(WebApiService);
 
   async buildImage() {
-    let url: string = await this.webApiService
-    .buildImage(this.eye().replace(" ", ""), this.mouth().replace(" ", ""), this.hand().replace(" ", ""), this.hasHammer(), this.hasTail());
+    const options: imageOptions = {
+      eye: this.eye().replace(" ", ""),
+      mouth: this.mouth().replace(" ", ""),
+      rightHand: this.hand().replace(" ", ""),
+      hasHammer: this.hasHammer(),
+      hasTail: this.hasTail()
+    };
+    const url: string = await this.webApiService.buildImage(options);
     this.imageUrl.set(url);
   }
 
   async buildRandom() {
     let options: imageOptions = await this.webApiService.buildRandomImage();
-    console.log(options);
     this.eye.set(options.eye);
     this.mouth.set(options.mouth);
     this.hand.set(options.rightHand);
