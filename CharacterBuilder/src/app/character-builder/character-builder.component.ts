@@ -33,7 +33,7 @@ export class CharacterBuilderComponent {
 
   async buildRandom() {
     let options: imageOptions = await this.webApiService.buildRandomImage();
-    this.eye.set(options.eye);
+    this.eye.set(options.eye == 'HalfOpen' ? 'Half Open' : options.eye);
     this.mouth.set(options.mouth);
     this.hand.set(options.rightHand);
     this.hasHammer.set(options.hasHammer);
