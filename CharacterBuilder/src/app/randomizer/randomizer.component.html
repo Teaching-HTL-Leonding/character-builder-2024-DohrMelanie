@@ -1,0 +1,9 @@
+<div class="buttons">
+  <button (click)="zoomIn()">+</button>
+  <button (click)="zoomOut()">-</button>
+  <button (click)="nextCharacter()">Next</button>
+</div>
+
+<div>
+  <img [src]="imageUrl" width="200" [style.transform]="'scale(' + zoomLevel + ')'">
+</div>
