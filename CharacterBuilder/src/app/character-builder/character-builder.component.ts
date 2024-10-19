@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { WebApiService } from '../web-api.service';
+import { imageOptions, WebApiService } from '../web-api.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -23,6 +23,17 @@ export class CharacterBuilderComponent {
     let url: string = await this.webApiService
     .buildImage(this.eye().replace(" ", ""), this.mouth().replace(" ", ""), this.hand().replace(" ", ""), this.hasHammer(), this.hasTail());
     this.imageUrl.set(url);
+  }
+
+  async buildRandom() {
+    let options: imageOptions = await this.webApiService.buildRandomImage();
+    console.log(options);
+    this.eye.set(options.eye);
+    this.mouth.set(options.mouth);
+    this.hand.set(options.rightHand);
+    this.hasHammer.set(options.hasHammer);
+    this.hasTail.set(options.hasTail);
+    this.buildImage();
   }
 
   reset() {

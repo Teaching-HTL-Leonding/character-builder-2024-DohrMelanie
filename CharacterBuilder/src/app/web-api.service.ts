@@ -5,6 +5,13 @@ import { lastValueFrom } from 'rxjs';
 interface imageResponse {
   url: string;
 }
+export interface imageOptions {
+  eye: string,
+  hasHammer: boolean,
+  mouth: string,
+  rightHand: string,
+  hasTail: boolean
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +21,17 @@ export class WebApiService {
   private httpClient = inject(HttpClient);
 
   async buildImage(eye: string, mouth: string, hand: string, hasHammer: boolean, hasTail: boolean): Promise<string> {
-    console.log(eye, mouth, hand, hasHammer, hasTail);
-    const response = await lastValueFrom(this.httpClient.post<imageResponse>(this.apiUrl + "build-image-url", {
+    const imageOptions: imageOptions = {
       eye: eye,
       hasHammer: hasHammer,
       mouth: mouth,
       rightHand: hand,
       hasTail: hasTail
-    }));
-    console.log(response);
+    };
+    const response = await lastValueFrom(this.httpClient.post<imageResponse>(this.apiUrl + "build-image-url", imageOptions));
     return response.url;
+  }
+  async buildRandomImage(): Promise<imageOptions> {
+    return await lastValueFrom(this.httpClient.get<imageOptions>(this.apiUrl + "get-random-image-options"));
   }
 }
